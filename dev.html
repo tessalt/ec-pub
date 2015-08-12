@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Publisher test page</title>
+    <link rel="stylesheet" type="text/css" src="style.css" />
+    <style>
+      body {
+        font-family: "Helvetica";
+      }
+      p {
+        line-height: 1.4;
+      }
+      a {
+        color: #bada55;
+      }
+      .container {
+        max-width: 990px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Blog Post</h1>
+    <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Laborum reprehenderit atque sequi, veniam omnis dicta odit, ad deleniti, fugiat laboriosam impedit laudantium. Dignissimos dolorem facere esse, laborum deleniti, repellat sint.</p>
+
+    
+    <script id="echochamber">
+
+      var scripts = {
+        local: 'http://widget.dev/bundle.js',
+        prod: 'https://s3.amazonaws.com/echochamberjs/dist/main.js'
+      }
+
+      var EchoChamber = window.EchoChamber || {};
+      (function() {
+        EchoChamber.discussionURL = window.location;
+        var script = document.createElement('script');
+        script.src = scripts.local; 
+        script.async = true;
+        var entry = document.getElementsByTagName('script')[0];
+        entry.parentNode.insertBefore(script, entry);
+      })();
+    </script>
+
+
+    </div>
+  </body>
+</html>
